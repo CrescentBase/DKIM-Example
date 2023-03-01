@@ -4,24 +4,8 @@ const crypto = require("crypto");
 const wasm_tester = require("./tester.js");
 const assert = chai.assert;
 const fs = require("fs");
+const {strToBytes} = require("./helpers/utils");
 
-
-
-const {bufferToBitArray, bitArrayToBuffer, sha256Pad, strToBytes} = require("./helpers/utils");
-const { base64 } = require("ethers/lib/utils.js");
-
-function msgToBitsSHA(msg, blocks) {
-    let inn = bufferToBitArray(Buffer.from(msg));
-    const overall_len = blocks * 512;
-    const add_bits = overall_len - inn.length;
-    inn = inn.concat(Array(add_bits).fill(0));
-    return inn;
-}
-
-function msgToBits(msg) {
-    let inn = bufferToBitArray(Buffer.from(msg));
-    return inn;
-}
 
 function shaHash(str) {
     return crypto.createHash("sha256").update(str).digest();
@@ -60,9 +44,6 @@ function getInput(
     const fromBytes = strToBytes(Buffer.from(from), BLOCK_LEN);
     const saltBytes = strToBytes(Buffer.from(salt), BLOCK_LEN);
     const msg = strToBytes(Buffer.from(preimageOfBase), BLOCK_LEN);
-    // console.log("HMUA============", HMUA.length, HMUA, shaHash(from + salt).toString("hex"));
-    // console.log("msg============", msg.length, preimageOfBase.length, base, msg);
-    // console.log("bh============", bh.length, bh);
     
     assert(HMUA.length == SHA256_LEN_BYTES, "Illegal HMUA length");
     assert(bh.length == BH_LEN, "Illegal bhBits length");
