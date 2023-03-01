@@ -1,0 +1,25 @@
+{
+  "name": "crescentDKIM",
+  "version": "0.0.1",
+  "description": "DKIM solution for crscent wallet",
+  "main": "index.js",
+  "repository": "",
+  "author": "BenLaw <dysquare@foxmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "cd ./test && mocha ./dkim.js",
+    "testContains": "cd ./test && mocha ./contains.js"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "circom_tester": "^0.0.9",
+    "ts-node": "^10.9.1",
+    "typechain": "^5.2.0",
+    "typescript": "^4.9.5",
+    "ethers": "^5.7.2"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.1"
+  }
+}
+

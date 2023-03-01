@@ -1,0 +1,51 @@
+node_modules
+snark-jwt-verify
+
+#Hardhat files
+cache
+artifacts
+node_modules
+.env
+coverage
+coverage.json
+typechain
+
+#OS files
+.DS_Store
+
+#Circom Build
+build_circuits
+
+node_modules
+.env
+coverage
+coverage.json
+typechain
+
+#Hardhat files
+cache
+artifacts
+
+node_modules
+.env
+coverage
+coverage.json
+typechain
+typechain-types
+
+# Hardhat files
+cache
+artifacts
+
+
+node_modules
+.env
+coverage
+coverage.json
+typechain
+typechain-types
+
+# Hardhat files
+cache
+artifacts
+
